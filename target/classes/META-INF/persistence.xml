@@ -7,13 +7,15 @@
 <provider>org.hibernate.ejb.HibernatePersistence</provider>
 <properties>
 <property name="hibernate.dialect"
-value="org.hibernate.dialect.SQLServer2008Dialect"/>
+value="org.hibernate.dialect.SQLServer2012Dialect"/>
 
 <property name="hibernate.connection.driver_class"
 value="com.microsoft.sqlserver.jdbc.SQLServerDriver.class" />
 
 <property name="hibernate.connection.url"
-value="jdbc:sqlserver://HELLSERVER/s2app" />
+value="jdbc:sqlserver://HELLSERVER:1433;databaseName=s2app" />
+<!-- value="jdbc:sqlserver://HELLSERVER:1433/s2app" /> -->
+<!--value="jdbc:sqlserver://HELLSERVER:1433;databaseName=s2app" -->
 
 <property name="hibernate.connection.username" value="test" />
 
