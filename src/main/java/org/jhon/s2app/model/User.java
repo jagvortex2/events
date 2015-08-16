@@ -34,6 +34,19 @@ public class User implements Serializable {
 	byte[] portrait;
 	
 	
+
+	@Id @Column(name="EMAIL")
+	public String getEmail(){
+		return email;
+	}
+	
+	
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
 	/**
 	 * @return the portrait
 	 */
@@ -90,13 +103,6 @@ public class User implements Serializable {
 
 	
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 
-	@Id @Column(name="EMAIL")
-	public String getEmail(){
-		return email;
-	}
 }

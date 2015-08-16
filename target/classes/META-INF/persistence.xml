@@ -1,34 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="s2app" transaction-type="RESOURCE_LOCAL">
+    	<class>org.jhon.s2app.model.Address</class>
+    	<class>org.jhon.s2app.model.Broadcast</class>
+    	<class>org.jhon.s2app.model.Contestant</class>
+    	<class>org.jhon.s2app.model.Event</class>
+    	<class>org.jhon.s2app.model.Location</class>
+    	<class>org.jhon.s2app.model.User</class>
+    	<class>org.jhon.s2app.model.Voter</class>
 
-<persistence-unit name="s2app">
-<provider>org.hibernate.ejb.HibernatePersistence</provider>
-<properties>
-<property name="hibernate.dialect"
-value="org.hibernate.dialect.SQLServer2012Dialect"/>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:sqlserver://HELLSERVER.test.com:1433;databaseName=s2app"></property>
+            <property name="hibernate.connection.driver_class" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"></property>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2012Dialect"></property>
 
-<property name="hibernate.connection.driver_class"
-value="com.microsoft.sqlserver.jdbc.SQLServerDriver.class" />
 
-<property name="hibernate.connection.url"
-value="jdbc:sqlserver://HELLSERVER:1433;databaseName=s2app" />
-<!-- value="jdbc:sqlserver://HELLSERVER:1433/s2app" /> -->
-<!--value="jdbc:sqlserver://HELLSERVER:1433;databaseName=s2app" -->
+            <!-- value="jdbc:sqlserver://HELLSERVER:1433/s2app" /> -->
+            <!--value="jdbc:sqlserver://HELLSERVER:1433;databaseName=s2app" -->
 
-<property name="hibernate.connection.username" value="test" />
-
-<property name="hibernate.connection.password" value="MeddlE203491"/> 
-
-<property name="hibernate.hbm2ddl.auto" value="update" />
-
-<property name="hibernate.archive.autodetection" value="class" />
-
-<property name="hibernate.show_sql" value="true" />
-
-<property name="hibernate.format_Sql" value="true" />
-
-</properties>
-</persistence-unit>
+            <property name="hibernate.connection.username" value="test"></property>
+            <property name="hibernate.connection.password" value="MeddlE203491"></property>
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"></property>
+            <property name="transaction.factory_class" value="org.hibernate.transaction.JDBCTransactionFactory"></property>
+            <property name="hibernate.show_sql" value="true"></property>
+            <property name="hibernate.format_Sql" value="true"></property>
+            <property name="hibernate.hbm2ddl.auto" value="create"></property>
+            
+            <!--  
+            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://HELLSERVER.test.com:1433;databaseName=s2app"/>
+            <property name="javax.persistence.jdbc.user" value="test"/>
+            <property name="javax.persistence.jdbc.password" value="MeddlE203491"/>
+             -->
+        </properties>
+    </persistence-unit>
 </persistence>
+

@@ -17,7 +17,7 @@ import javax.persistence.Table;
  * @author Jhonatan
  *
  */
-@Entity @Table(name="BROADCAST", schema="s2app")
+@Entity @Table(name="dbo.BROADCAST", schema="s2app")
 @PrimaryKeyJoinColumn(name="LOCATION_PK")
 public class Broadcast extends Location implements Serializable {
 

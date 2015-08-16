@@ -76,7 +76,7 @@ public class Location implements Serializable {
 	/**
 	 * @return the state
 	 */
-	@Column(name="STATE")
+	@Column(name="STATE", insertable=false, updatable=false)
 	public String getState() {
 		return state;
 	}

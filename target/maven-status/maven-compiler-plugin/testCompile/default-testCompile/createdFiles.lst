@@ -1,0 +1,4 @@
+org\jhon\s2app\model\UserTestCase.class
+org\jhon\action\HelloWorldActionTest.class
+org\jhon\s2app\model\PersistenceBaseClass.class
+org\jhon\action\IndexActionTest.class
